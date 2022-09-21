@@ -1,5 +1,6 @@
 # This Repo explores and Maps out different Fact-checking Websites.
 
+
 The goal is to find fact-checking websites and resources that can be used to create datasets of Fake News Links and articles.
 
 
@@ -20,6 +21,6 @@ The goal is to find fact-checking websites and resources that can be used to cre
 
 ### Notes
 
-+ It doesn't seem trivial to get the URLs of Fake News through PolitiFact or factcheck, as they are not highlighted / made easily accesible in a fixed position on the website.
++ The first URLS under the fact check sources is the orignal fake news URL link. Many of these have dead links as they have been removed by the blog page or social media page that they where made on etc. 
++ Also, many of the URLS are not present when searching on tweets. From some brief testing it seems that the URLS typically appear with a different format on Twitter.
 + Approach could be to search for News Article title "96% of U.S. climate data is corrupted" through browser and then scrape the resulting links to a news article.
-+ 
