@@ -29,3 +29,6 @@ The goal is to find fact-checking websites and resources that can be used to cre
 
 ![politifact kaggle scraping flow]('https://www.kaggle.com/datasets/shivkumarganesh/politifact-factcheck-data?resource=download')
 
+
+
+![topics_distr](kaggle_politifact/topics_distribution.pdf)
