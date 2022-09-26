@@ -2,3 +2,5 @@ Pipfile*
 Pipfile.lock
 *csv
 *txt
+src/scripting.ipynb
+*.pyc
