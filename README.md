@@ -40,7 +40,7 @@ The goal is to find fact-checking websites and resources that can be used to cre
 
 
 
-![topics_distr](existing_tools/kaggle_politifact/topics_distribution.pdf)
+![topics_distr](existing_tools/topics_distribution.pdf)
 
 
 
