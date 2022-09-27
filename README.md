@@ -36,11 +36,11 @@ The goal is to find fact-checking websites and resources that can be used to cre
 + Approach could be to search for News Article title "96% of U.S. climate data is corrupted" through browser and then scrape the resulting links to a news article.
 
 
-![politifact kaggle scraping flow]('https://www.kaggle.com/datasets/shivkumarganesh/politifact-factcheck-data?resource=download')
+![politifact kaggle scraping flow]('https://i.imgur.com/9MH52Uf.jpg')
 
 
 
-![topics_distr](kaggle_politifact/topics_distribution.pdf)
+![topics_distr](existing_tools/kaggle_politifact/topics_distribution.pdf)
 
 
 
