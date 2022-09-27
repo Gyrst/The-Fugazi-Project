@@ -12,10 +12,21 @@ The goal is to find fact-checking websites and resources that can be used to cre
 ### Existing Resources as of September 2022
 
 + https://politifact.com
-+ https://www.factcheck.org/
+    - Mixed topics
+    - Very renowned and appearing in a multitude of studies
++ Fact-Check https://www.factcheck.org/
+    - Mostly politics
+    - US-based Non-profit renowned by Times. Also found in Research (Way less than politifact)
+    - Paper using the site for data (https://journals.sagepub.com/doi/abs/10.1177/1077699017710453) ~130 citations
++ Reuters Fact Checking https://www.reuters.com/fact-check
+    - No menu or breakdown of topics
+    - Mixed topics
+    - UK-based (International Scope)  
 + https://developers.google.com/fact-check/tools/api/
 + https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset/metadata (https://www.uvic.ca/ecs/ece/isot/assets/docs/ISOT_Fake_News_Dataset_ReadMe.pdf?utm_medium=redirect&utm_source=/engineering/ece/isot/assets/docs/ISOT_Fake_News_Dataset_ReadMe.pdf&utm_campaign=redirect-usage
 )
+
+###
 
 
 ### Notes & Learning

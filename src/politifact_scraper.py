@@ -1,7 +1,7 @@
 import requests, re
 from bs4 import BeautifulSoup
 import pandas as pd
-from functions import *
+from scraper_functions import *
 
 topics = ['climate-change', 'environment', 'abortion', 'coronavirus', 'elections', 'terrorism', 'ukraine']
 data = []
@@ -47,6 +47,6 @@ for topic in topics:
         page_number += 1
 
 df = pd.DataFrame(data)
-df = df.rename({df.columns[0]:'claim', df.columns[1]:'URL', df.columns[2]:'truth_value', df.columns[3]:'date',df.columns[4]:'topic'}, axis=1)
+df = df.rename({df.columns[0]:'claim', df.columns[1]:'URL', df.columns[2]:'truth_value', df.columns[3]:'stated_on',df.columns[4]:'topic'}, axis=1)
 
 df.to_csv("data/01_pol_scrape.csv")
