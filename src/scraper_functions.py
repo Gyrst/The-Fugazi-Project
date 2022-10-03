@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+import re
 
 def get_soup_page(url_page):
     """Converts URL into a BeautifulSoup object.
@@ -20,3 +21,12 @@ def more_pages(soup_object):
             return True
     except:
         return True
+
+def read_topics(path_to_file):
+    topics = []
+    with open(path_to_file, "r") as lines:
+        for line in lines.readlines():
+            line = line.strip()
+            line = re.sub(" ", "-", line)
+            topics.append(line.lower())
+    return topics
