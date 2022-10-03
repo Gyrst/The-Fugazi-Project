@@ -5,3 +5,5 @@ Pipfile.lock
 src/scripting.ipynb
 *.pyc
 *json
+exsting_tools/*
+
