@@ -2,7 +2,7 @@ Pipfile*
 Pipfile.lock
 *csv
 *txt
-src/scripting.ipynb
+*.ipynb
 *.pyc
 *json
 exsting_tools/*

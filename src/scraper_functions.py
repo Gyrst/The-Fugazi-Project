@@ -1,3 +1,4 @@
+from asyncio import exceptions
 import requests
 from bs4 import BeautifulSoup
 import re
@@ -24,9 +25,27 @@ def more_pages(soup_object):
 
 def read_topics(path_to_file):
     topics = []
+    exceptions= {  "alcohol":"Alcohol",
+                    "candidate-biography": "candidates-biography",
+                    "jan.-6": "jan-6",
+                    "message-machine-2010":"message-machine",
+                    "negative-campaigning": "campaign-advertising",
+                    "polls-and-public-opinion": "polls",
+                    "race-and-ethnicity": "race-ethnicity",
+                    "regulation":"market-regulation",
+                    "tampa-bay-10-news": "10-news-tampa-bay"
+                }
     with open(path_to_file, "r") as lines:
         for line in lines.readlines():
             line = line.strip()
             line = re.sub(" ", "-", line)
-            topics.append(line.lower())
+            try:
+                line = exceptions[line.lower()]
+            except KeyError:    
+                line = line.lower()
+                
+            topics.append(line)
+            
     return topics
+
+

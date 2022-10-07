@@ -4,11 +4,16 @@ from scraper_functions import *
 from datetime import date
 
 
-topics = ['climate-change', 'environment', 'abortion', 'coronavirus', 'elections', 'terrorism', 'ukraine']
-#topics = read_topics("src/topics.txt")
+original_topics = ['climate-change', 'environment', 'abortion', 'coronavirus', 'elections', 'terrorism', 'ukraine']
+topics = read_topics("src/topics.txt")
 data = []
 
 for topic in topics:
+    
+    #In order to avoid scraping the topics already scraped earlier.
+    if topic in original_topics:
+        continue
+    
     page_number = 1
     base_url = 'https://www.politifact.com/factchecks/list/?page={page_number}&category={topic}'.format(page_number=page_number, topic=topic)
     print("Currently running for", topic)
@@ -48,7 +53,7 @@ for topic in topics:
                 
                 news_article = [claim, origin, url, truth_value, stated_on, topic]
                 
-                if page_number==1:
+                if i==1:
                     print(news_article)
                 
                 data.append(news_article)
@@ -64,7 +69,7 @@ print(df)
 df = df.rename({df.columns[0]:'claim', df.columns[1]:'origin', df.columns[2]:'URL', df.columns[3]:'truth_value', df.columns[4]:'stated_on',df.columns[5]:'topic'}, axis=1)
 
 #path = "data/politifact/"
-csv_title = "politifact_scrape_7t_{date}.csv".format(date=str(date.today().strftime("%d%m%Y")))
+csv_title = "politifact_scrape_all_{date}.csv".format(date=str(date.today().strftime("%d%m%Y")))
 
 
 print(csv_title)
