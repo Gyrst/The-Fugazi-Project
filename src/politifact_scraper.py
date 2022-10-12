@@ -9,7 +9,7 @@ When running the politifact scraper make sure to:
 
 import re
 import pandas as pd
-from scraper_functions import *
+from functions import *
 from datetime import date
 
 #Remember to specify title to avoid overwriting existing files

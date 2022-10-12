@@ -14,6 +14,15 @@ There also exists good resources online and toturials to create a scraper for Po
 + Scraping politifact (not getting the URLs of the fakenews...) https://www.youtube.com/watch?v=Nz1zPkiHcbg
 
 
+
+### Datasets
+
++ all_politifact_0710.csv contains all claims on politifact as of 7th of October 2022.
++ all_politifact_1210nodup.csv contains only claims that does not originate from meta platforms, or has the origin viral video. It was scraped on the 7th of October 2022 as well. It has all duplicates removes. It is common that a quote is duplicated both in the topic and origin category. likewise it is possible that a claim is duplicate but varies on the date. In this file, we first have removed Meta platform and virial video tags, sorted our sample by date, and then removed duplicate claims keeping the 'first' so keeping the earlist date (if it contains varying dates).
++ google_factcheck_3t_2309.csv contains fact_check fetched with the google fact check API on the 23rd of September 2022. This is mixed data from three different topics.
+
+
+
 ### Existing Resources as of September 2022
 
 + https://politifact.com
@@ -36,10 +45,6 @@ There also exists good resources online and toturials to create a scraper for Po
 + The first URLS under the fact check sources is the orignal fake news URL link. Many of these have dead links as they have been removed by the blog page or social media page that they where made on etc. 
 + Also, many of the URLS are not present when searching on tweets. From some brief testing it seems that the URLS typically appear with a different format on Twitter.
 + Approach could be to search for News Article title "96% of U.S. climate data is corrupted" through browser and then scrape the resulting links to a news article.
-
-
-![politifact kaggle scraping flow]('https://i.imgur.com/9MH52Uf.jpg')
-
 
 
 
@@ -73,3 +78,4 @@ There also exists good resources online and toturials to create a scraper for Po
 + https://developers.google.com/fact-check/tools/api/
 + https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset/metadata (https://www.uvic.ca/ecs/ece/isot/assets/docs/ISOT_Fake_News_Dataset_ReadMe.pdf?utm_medium=redirect&utm_source=/engineering/ece/isot/assets/docs/ISOT_Fake_News_Dataset_ReadMe.pdf&utm_campaign=redirect-usage
 )
+

@@ -1,7 +1,12 @@
-from asyncio import exceptions
 import requests
 from bs4 import BeautifulSoup
 import re
+from datetime import datetime
+
+""" @Gyrst September 2022
+    Code below comprise helper-functions applied when scraping the data from politifact.
+    
+"""
 
 def get_soup_page(url_page):
     """Converts URL into a BeautifulSoup object.
@@ -48,4 +53,40 @@ def read_topics(path_to_file):
             
     return topics
 
+
+"""
+PREPROCESSING AND FILTERING
+Functions below here are related to preprocessing and filtering of the data after it has been fetched. 
+All these steps apply to the future process of the Fugazi Project, and can be ignored if you are here just to get the data from politifact
+
+
+It comprises:
+    - Duplicate data removal
+    - removing Facebook and Instagram posts
+    - sorting and cleaning, keeping the original indexing
+"""
+
+def remove_irrelevant_origins(df, undesired_origins=['Facebook posts', 'Instagram posts', 'Viral video']):
+    return df[~df['origin'].isin(undesired_origins)]
+    
+
+def create_datetime_date_col(df):
+    df['date'] = df['stated_on'].apply(lambda x: datetime.strptime(x, '%B %d, %Y'))
+    return df
+
+def remove_duplicate_data(df):
+    df = create_datetime_date_col(df)
+    df = df.sort_values(by='date', ascending=True)
+    return df.drop_duplicates(subset='claim', keep='first')
+
+
+def sort_by_original_index(df, original_index='Unnamed: 0'):
+    return df.sort_values(by='Unnamed: 0')
+
+
+def preprocess_fetched_data(df):
+    df = remove_irrelevant_origins(df)    
+    df = remove_duplicate_data(df)
+    df = sort_by_original_index(df)
+    return df
 
