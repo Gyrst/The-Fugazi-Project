@@ -79,3 +79,10 @@ There also exists good resources online and toturials to create a scraper for Po
 + https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset/metadata (https://www.uvic.ca/ecs/ece/isot/assets/docs/ISOT_Fake_News_Dataset_ReadMe.pdf?utm_medium=redirect&utm_source=/engineering/ece/isot/assets/docs/ISOT_Fake_News_Dataset_ReadMe.pdf&utm_campaign=redirect-usage
 )
 
+
+
+### Notes for Work done on 14-10-2022
+
+- Built quick class to post requests for the current US politicians to get the twitter IDs returned.
+- Stored as data/legislators/politicians_twitterIDs.json
+- Integrated with the legislators-current.csv as "data/legislators/legislators-current-twIDs.csv"
