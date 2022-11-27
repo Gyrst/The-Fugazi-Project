@@ -90,3 +90,36 @@ def preprocess_fetched_data(df):
     df = sort_by_original_index(df)
     return df
 
+
+""" Methods below applies to the process extracting the true origins from the URL's that actually reveal the origin
+"""
+
+def find_origin_from_url(url):
+    pattern = r"\/\d{2}\/"
+    match = re.search(pattern, url)
+    char_start = match.span()[-1]
+    return url[char_start:].split("/")[0]
+
+def split_to_char(word):
+    split_word = []
+    for s in word:
+        split_word.append(s)
+    return split_word
+
+
+def get_jaccard_sim(str1, str2): 
+    a = set(split_to_char(str1.lower())) 
+    b = set(split_to_char(str2.lower()))
+    c = a.intersection(b)
+    return float(len(c)) / (len(a) + len(b) - len(c))
+
+
+def jaccard_on_set(set, x):
+    most_sim = ("", 0)
+    for val in set:
+        sim = get_jaccard_sim(val, x)
+        if most_sim[-1] < sim:
+            most_sim = (val, sim)
+            
+    return most_sim
+
