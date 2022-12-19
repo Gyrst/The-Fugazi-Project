@@ -1,7 +1,8 @@
 Pipfile*
 Pipfile.lock
 *csv
-*txt
+data/*
 *.ipynb
 *.pyc
 *json
+NOTES.md
